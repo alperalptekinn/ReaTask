@@ -1,0 +1,26 @@
+﻿@model ReaTask.Models.Category
+
+@{
+    ViewData["Title"] = "Kategori Ekle";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Kategori Ekle
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Kategori Adı</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-outline-success">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

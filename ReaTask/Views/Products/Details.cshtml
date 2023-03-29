@@ -1,0 +1,35 @@
+﻿@model ReaTask.Models.Product
+
+@{
+    ViewData["Title"] = "Ürün Detay";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Kategori Detay
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Ürün Adı</label>
+                <input asp-for="Name" class="form-control" disabled />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Ürün Kategori</label>
+                <input value="@Html.DisplayFor(model => model.Category.Name)" class="form-control" disabled />
+            </div>
+            <div class="mb-3">
+                <label asp-for="IsNew" class="form-label">Yeni Ürün</label>
+                @Html.DisplayFor(model => model.IsNew)
+            </div>
+            <div class="mb-3">
+                <label asp-for="Price" class="form-label">Ürün Fiyatı</label>
+                <input asp-for="Price" class="form-control" disabled />
+            </div>
+            <div class="float-end">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-success">Düzenle</a>
+                <a asp-action="Index" class="btn btn-outline-primary">Listeye Dön</a>
+            </div>
+        </div>
+    </div>
+</div>

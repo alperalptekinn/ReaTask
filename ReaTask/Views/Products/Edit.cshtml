@@ -1,0 +1,40 @@
+﻿@model ReaTask.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Ürün Düzenle
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div class="mb-3">
+                    <label asp-for="CategoryId" class="form-label">Ürün Kategori</label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Ürün Adı</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" asp-for="IsNew">
+                    <label class="form-check-label" for="IsNew">Yeni Ürün</label>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Ürün Fiyatı</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-outline-success">Düzenle</button>
+                <button asp-action="Index" class="btn btn-outline-primary">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

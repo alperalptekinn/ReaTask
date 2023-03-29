@@ -1,0 +1,21 @@
+﻿@model ReaTask.Models.Product
+
+@{
+    ViewData["Title"] = "Ürün Sil";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <b>"@Html.DisplayFor(model => model.Name)"</b> Ürününü Sil
+        </div>
+        <div class="card-body">
+            <h5 class="mb-3"><b>"@Html.DisplayFor(model => model.Name)"</b> Ürünü Silinecek</h5>
+            <form asp-action="Delete" class="float-end">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Sil" class="btn btn-outline-danger" />
+                <a class="btn btn-outline-primary" asp-action="Index">Vazgeç</a>
+            </form>
+        </div>
+    </div>
+</div>

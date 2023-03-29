@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card">
+                <a asp-controller="Categories" asp-action="Index">
+                    <img class="card-img-top border-bottom" src="img/category.jpg" width="100%" alt="category">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Kategoriler</h5>
+                    <p class="card-text"><b>Toplam Kategori Sayısı:</b> @ViewBag.CategoryCount</p>
+                    <a class="btn btn-outline-primary w-100" asp-controller="Categories" asp-action="Index">Kategorileri Gör</a>
+                    <a class="btn btn-outline-success w-100 mt-2" asp-controller="Categories" asp-action="Create">Kategori Ekle</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <a asp-controller="Products" asp-action="Index">
+                    <img class="card-img-top border-bottom" src="img/product.jpg" width="100%" alt="product">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Ürünler</h5>
+                    <p class="card-text"><b>Toplam Ürün Sayısı:</b> @ViewBag.ProductCount</p>
+                    <a class="btn btn-outline-primary w-100" asp-controller="Products" asp-action="Index">Ürünleri Gör</a>
+                    <a class="btn btn-outline-success w-100 mt-2" asp-controller="Products" asp-action="Create">Ürün Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

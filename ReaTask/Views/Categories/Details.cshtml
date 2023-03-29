@@ -1,0 +1,23 @@
+﻿@model ReaTask.Models.Category
+
+@{
+    ViewData["Title"] = "Kategori Detay";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Kategori Detay
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Kategori Adı</label>
+                <input asp-for="Name" class="form-control" disabled />
+            </div>
+            <div class="float-end">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-success">Düzenle</a>
+                <a asp-action="Index" class="btn btn-outline-primary">Listeye Dön</a>
+            </div>
+        </div>
+    </div>
+</div>
